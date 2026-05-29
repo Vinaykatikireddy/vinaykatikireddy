@@ -2,11 +2,11 @@
 -->
 ![Profile views](https://komarev.com/ghpvc/?username=vinaykatikireddy&label=Profile%20views&color=0e75b6&style=flat)
 
-<div id="toc">
+<div>
   <ul align="center" style="list-style: none">
     <summary>
       <h1>
-        👋 Hi, my name is Vinay KAtikireddy
+        👋 Hello, I'm Vinay Katikireddy
       </h1>
     </summary>
   </ul>
