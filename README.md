@@ -39,9 +39,9 @@ environments. Strong interest in ethical hacking, system internals, and security
   <img src="https://img.shields.io/badge/Python-306998?logo=python&logoColor=white" height="28" alt="Python" style="margin-right: 4px">
   <img src="https://img.shields.io/badge/node.js-6DA55F?logo=node.js&logoColor=white" height="28" alt="NodeJS" style="margin-right: 4px">
   <img src="https://img.shields.io/badge/express.js-404d59?logo=express&logoColor=white" height="28" alt="Express" style="margin-right: 4px">
-  <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white" height="20" alt="Bash" style="margin-right: 4px">
+  <img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white" height="20" alt="Bash" style="margin-right: 4px; border-radius: 5px">
   <img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white" height="28" alt="Git" style="margin-right: 4px">
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=white" height="20" alt="Linux" style="margin-right: 4px">
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=white" height="20" alt="Linux" style="margin-right: 4px; border-radius: 5px">
 </div>
 
  **<h3 align="left">GitHub Stats</h3>**
