@@ -1,0 +1,406 @@
+// ===============================
+// MOBILE NAVIGATION
+// ===============================
+
+const menuBtn = document.querySelector(".menu-btn");
+const navMenu = document.querySelector(".nav-menu");
+
+if (menuBtn && navMenu) {
+    menuBtn.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+
+        const icon = menuBtn.querySelector("i");
+
+        if (navMenu.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+        } else {
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+        }
+    });
+
+    document.querySelectorAll(".nav-menu a").forEach(link => {
+        link.addEventListener("click", () => {
+            navMenu.classList.remove("active");
+
+            const icon = menuBtn.querySelector("i");
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+        });
+    });
+}
+
+
+// ===============================
+// HEADER SCROLL EFFECT
+// ===============================
+
+const header = document.querySelector(".header");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+});
+
+
+// ===============================
+// ACTIVE NAVIGATION LINK
+// ===============================
+
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-menu a");
+
+function updateActiveLink() {
+
+    let currentSection = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.offsetHeight;
+
+        if (
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
+        ) {
+            currentSection = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active-link");
+
+        if (
+            link.getAttribute("href") ===
+            `#${currentSection}`
+        ) {
+            link.classList.add("active-link");
+        }
+    });
+}
+
+window.addEventListener("scroll", updateActiveLink);
+updateActiveLink();
+
+
+// ===============================
+// SCROLL REVEAL ANIMATION
+// ===============================
+
+const revealElements = document.querySelectorAll(
+    ".section, .project-card, .skill-card, .timeline-card"
+);
+
+const revealObserver = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+revealElements.forEach(element => {
+    revealObserver.observe(element);
+});
+
+
+// ===============================
+// HERO TYPING EFFECT
+// ===============================
+
+const heroSubtitle = document.querySelector(".hero-subtitle");
+
+if (heroSubtitle) {
+
+    const titles = [
+        "AI Security Engineer",
+        "Cybersecurity Researcher",
+        "Linux Enthusiast",
+        "Full Stack Developer",
+        "Problem Solver"
+    ];
+
+    let titleIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeEffect() {
+
+        const currentTitle = titles[titleIndex];
+
+        if (!deleting) {
+
+            heroSubtitle.textContent =
+                currentTitle.substring(0, charIndex + 1);
+
+            charIndex++;
+
+            if (charIndex === currentTitle.length) {
+
+                deleting = true;
+
+                setTimeout(typeEffect, 1500);
+
+                return;
+            }
+
+        } else {
+
+            heroSubtitle.textContent =
+                currentTitle.substring(0, charIndex - 1);
+
+            charIndex--;
+
+            if (charIndex === 0) {
+
+                deleting = false;
+                titleIndex++;
+
+                if (titleIndex >= titles.length) {
+                    titleIndex = 0;
+                }
+            }
+        }
+
+        setTimeout(
+            typeEffect,
+            deleting ? 40 : 80
+        );
+    }
+
+    typeEffect();
+}
+
+
+// ===============================
+// PARALLAX HERO BACKGROUND
+// ===============================
+
+const heroBg = document.querySelector(".hero-bg");
+
+window.addEventListener("scroll", () => {
+
+    if (!heroBg) return;
+
+    const offset = window.scrollY * 0.4;
+
+    heroBg.style.transform =
+        `translateY(${offset}px)`;
+});
+
+
+// ===============================
+// SMOOTH SCROLLING
+// ===============================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function (e) {
+
+        const target = document.querySelector(
+            this.getAttribute("href")
+        );
+
+        if (!target) return;
+
+        e.preventDefault();
+
+        window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: "smooth"
+        });
+
+    });
+
+});
+
+
+// ===============================
+// CURSOR GLOW EFFECT
+// ===============================
+
+const glow = document.createElement("div");
+
+glow.className = "cursor-glow";
+
+document.body.appendChild(glow);
+
+window.addEventListener("mousemove", (e) => {
+
+    glow.style.left = `${e.clientX}px`;
+    glow.style.top = `${e.clientY}px`;
+
+});
+
+
+// ===============================
+// PROJECT CARD TILT EFFECT
+// ===============================
+
+const cards = document.querySelectorAll(".project-card");
+
+cards.forEach(card => {
+
+    card.addEventListener("mousemove", e => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const rotateY =
+            ((x / rect.width) - 0.5) * 12;
+
+        const rotateX =
+            ((y / rect.height) - 0.5) * -12;
+
+        card.style.transform =
+            `perspective(1000px)
+             rotateX(${rotateX}deg)
+             rotateY(${rotateY}deg)
+             translateY(-8px)`;
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform =
+            "perspective(1000px) rotateX(0) rotateY(0)";
+    });
+
+});
+
+
+// ===============================
+// YEAR AUTO UPDATE
+// ===============================
+
+const footerYear = document.querySelector(".footer-year");
+
+if (footerYear) {
+    footerYear.textContent = new Date().getFullYear();
+}
+
+
+// ===============================
+// PAGE LOADER FINISH
+// ===============================
+
+window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+});
+
+
+// ===============================
+// CONSOLE EASTER EGG
+// ===============================
+
+console.log(`
+██╗   ██╗██╗███╗   ██╗ █████╗ ██╗   ██╗
+██║   ██║██║████╗  ██║██╔══██╗╚██╗ ██╔╝
+██║   ██║██║██╔██╗ ██║███████║ ╚████╔╝
+╚██╗ ██╔╝██║██║╚██╗██║██╔══██║  ╚██╔╝
+ ╚████╔╝ ██║██║ ╚████║██║  ██║   ██║
+  ╚═══╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝   ╚═╝
+
+Portfolio Loaded Successfully
+`);
+
+const canvas = document.getElementById("cursor-trail");
+const ctx = canvas.getContext("2d");
+
+let w = canvas.width = window.innerWidth;
+let h = canvas.height = window.innerHeight;
+
+window.addEventListener("resize", () => {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+});
+
+const mouse = {
+    x: w / 2,
+    y: h / 2
+};
+
+window.addEventListener("mousemove", e => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+});
+
+const trail = [];
+const trailLength = 35;
+
+for (let i = 0; i < trailLength; i++) {
+    trail.push({
+        x: mouse.x,
+        y: mouse.y
+    });
+}
+
+function animate() {
+    ctx.clearRect(0, 0, w, h);
+
+    trail[0].x += (mouse.x - trail[0].x) * 0.35;
+    trail[0].y += (mouse.y - trail[0].y) * 0.35;
+
+    for (let i = 1; i < trail.length; i++) {
+        trail[i].x += (trail[i - 1].x - trail[i].x) * 0.9;
+        trail[i].y += (trail[i - 1].y - trail[i].y) * 0.9;
+    }
+
+    ctx.globalCompositeOperation = "lighter";
+
+    trail.forEach((p, i) => {
+    const hue = 210 - i / (trail.length) * 90;
+        ctx.beginPath();
+        ctx.fillStyle = `hsla(${hue},100%,60%,${1 - i / trail.length})`;
+        ctx.arc(
+            p.x,
+            p.y,
+            9 * (1 - i / trail.length),
+            0,
+            Math.PI * 2
+        );
+        ctx.fill();
+    });
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+
+const logo = document.getElementById("logoText");
+
+const names = ["Vinay", '$ <span id="cursor">_</span>'];
+let index = 0;
+
+function switchLogo() {
+    logo.classList.add("glitch");
+
+    setTimeout(() => {
+        index = (index + 1) % names.length;
+
+        logo.innerHTML = names[index];
+        logo.setAttribute("data-text", names[index]);
+
+        logo.classList.remove("glitch");
+    }, 300); // glitch duration
+}
+
+// Change every 3, 6 seconds
+let t = 3000; (function f(){ switchLogo(); setTimeout(f, t = t === 3000 ? 6000 : 3000); })();
