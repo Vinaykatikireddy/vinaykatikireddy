@@ -24,7 +24,7 @@ environments. Strong interest in ethical hacking, system internals, and security
 - I'm currently working on: **💻 Face Recogmition Attendance System**
 - I'm currently learning: **📚 NodeJS, Postgres, OOPS in python**
 - Ask me about: **💡 JavaScript,  SQL, Python, and RESTful APIs**
-- Fun fact: **I often learn more from erros than from documentation.**
+- Fun fact: **I often learn more from errors than from documentation.**
 - Portfolio: **<a href="https://google.com/404" target="_blank">Vinay's Portfolio</a>**
 
  **<h3 align="left">Skills</h3>**
