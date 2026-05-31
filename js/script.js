@@ -185,45 +185,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 });
 
-// PROJECT CARD TILT EFFECT
-const cards = document.querySelectorAll(".project-card");
-
-cards.forEach(card => {
-
-    card.addEventListener("mousemove", e => {
-
-        const rect = card.getBoundingClientRect();
-
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const rotateY =
-            ((x / rect.width) - 0.5) * 12;
-
-        const rotateX =
-            ((y / rect.height) - 0.5) * -12;
-
-        card.style.transform =
-            `perspective(1000px)
-             rotateX(${rotateX}deg)
-             rotateY(${rotateY}deg)
-             translateY(-8px)`;
-
-    });
-
-    card.addEventListener("mouseleave", () => {
-
-        card.style.transform =
-            "perspective(1000px) rotateX(0) rotateY(0)";
-    });
-
-});
-
-// PAGE LOADER FINISH
-window.addEventListener("load", () => {
-    document.body.classList.add("loaded");
-});
-
 // CURSOR GLOW EFFECT
 const glow = document.createElement("div");
 
