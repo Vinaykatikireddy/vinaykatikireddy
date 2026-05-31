@@ -1,7 +1,4 @@
-// ===============================
 // MOBILE NAVIGATION
-// ===============================
-
 const menuBtn = document.querySelector(".menu-btn");
 const navMenu = document.querySelector(".nav-menu");
 
@@ -31,11 +28,7 @@ if (menuBtn && navMenu) {
     });
 }
 
-
-// ===============================
 // HEADER SCROLL EFFECT
-// ===============================
-
 const header = document.querySelector(".header");
 
 window.addEventListener("scroll", () => {
@@ -46,11 +39,7 @@ window.addEventListener("scroll", () => {
     }
 });
 
-
-// ===============================
 // ACTIVE NAVIGATION LINK
-// ===============================
-
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".nav-menu a");
 
@@ -87,11 +76,7 @@ function updateActiveLink() {
 window.addEventListener("scroll", updateActiveLink);
 updateActiveLink();
 
-
-// ===============================
 // SCROLL REVEAL ANIMATION
-// ===============================
-
 const revealElements = document.querySelectorAll(
     ".section, .project-card, .skill-card, .timeline-card"
 );
@@ -117,11 +102,7 @@ revealElements.forEach(element => {
     revealObserver.observe(element);
 });
 
-
-// ===============================
 // HERO TYPING EFFECT
-// ===============================
-
 const heroSubtitle = document.querySelector(".hero-subtitle");
 
 if (heroSubtitle) {
@@ -185,32 +166,9 @@ if (heroSubtitle) {
     typeEffect();
 }
 
-
-// ===============================
-// PARALLAX HERO BACKGROUND
-// ===============================
-
-const heroBg = document.querySelector(".hero-bg");
-
-window.addEventListener("scroll", () => {
-
-    if (!heroBg) return;
-
-    const offset = window.scrollY * 0.4;
-
-    heroBg.style.transform =
-        `translateY(${offset}px)`;
-});
-
-
-// ===============================
 // SMOOTH SCROLLING
-// ===============================
-
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
     anchor.addEventListener("click", function (e) {
-
         const target = document.querySelector(
             this.getAttribute("href")
         );
@@ -218,7 +176,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (!target) return;
 
         e.preventDefault();
-
         window.scrollTo({
             top: target.offsetTop - 80,
             behavior: "smooth"
@@ -228,29 +185,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 });
 
-
-// ===============================
-// CURSOR GLOW EFFECT
-// ===============================
-
-const glow = document.createElement("div");
-
-glow.className = "cursor-glow";
-
-document.body.appendChild(glow);
-
-window.addEventListener("mousemove", (e) => {
-
-    glow.style.left = `${e.clientX}px`;
-    glow.style.top = `${e.clientY}px`;
-
-});
-
-
-// ===============================
 // PROJECT CARD TILT EFFECT
-// ===============================
-
 const cards = document.querySelectorAll(".project-card");
 
 cards.forEach(card => {
@@ -284,75 +219,121 @@ cards.forEach(card => {
 
 });
 
-
-// ===============================
-// YEAR AUTO UPDATE
-// ===============================
-
-const footerYear = document.querySelector(".footer-year");
-
-if (footerYear) {
-    footerYear.textContent = new Date().getFullYear();
-}
-
-
-// ===============================
 // PAGE LOADER FINISH
-// ===============================
-
 window.addEventListener("load", () => {
     document.body.classList.add("loaded");
 });
 
+// CURSOR GLOW EFFECT
+const glow = document.createElement("div");
 
-// ===============================
-// CONSOLE EASTER EGG
-// ===============================
+glow.className = "cursor-glow";
 
-console.log(`
-██╗   ██╗██╗███╗   ██╗ █████╗ ██╗   ██╗
-██║   ██║██║████╗  ██║██╔══██╗╚██╗ ██╔╝
-██║   ██║██║██╔██╗ ██║███████║ ╚████╔╝
-╚██╗ ██╔╝██║██║╚██╗██║██╔══██║  ╚██╔╝
- ╚████╔╝ ██║██║ ╚████║██║  ██║   ██║
-  ╚═══╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝   ╚═╝
+document.body.appendChild(glow);
 
-Portfolio Loaded Successfully
-`);
+window.addEventListener("mousemove", (e) => {
 
+    glow.style.left = `${e.clientX}px`;
+    glow.style.top = `${e.clientY}px`;
+
+});
+
+
+//CURSOR TRAIL
 const canvas = document.getElementById("cursor-trail");
 const ctx = canvas.getContext("2d");
 
+let index = 0;
 let w = canvas.width = window.innerWidth;
 let h = canvas.height = window.innerHeight;
 
-window.addEventListener("resize", () => {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-});
+const MOBILE_BREAKPOINT = 768;
+
+let isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
+let isCursorVisible = false;
 
 const mouse = {
     x: w / 2,
     y: h / 2
 };
 
-window.addEventListener("mousemove", e => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-});
-
 const trail = [];
 const trailLength = 35;
 
-for (let i = 0; i < trailLength; i++) {
-    trail.push({
-        x: mouse.x,
-        y: mouse.y
-    });
+function resetTrail(x, y) {
+    trail.length = 0;
+
+    for (let i = 0; i < trailLength; i++) {
+        trail.push({
+            x,
+            y
+        });
+    }
 }
+
+resetTrail(mouse.x, mouse.y);
+
+function updateMobileState() {
+    isMobile =
+        window.innerWidth <= MOBILE_BREAKPOINT ||
+        window.matchMedia("(pointer: coarse)").matches;
+
+    canvas.style.display = isMobile ? "none" : "block";
+
+    if (isMobile) {
+        isCursorVisible = false;
+        ctx.clearRect(0, 0, w, h);
+    }
+}
+
+updateMobileState();
+
+window.addEventListener("resize", () => {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+
+    updateMobileState();
+});
+
+window.addEventListener("mousemove", e => {
+    if (isMobile) return;
+
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+
+    if (!isCursorVisible) {
+        resetTrail(mouse.x, mouse.y);
+        isCursorVisible = true;
+    }
+});
+
+document.documentElement.addEventListener("mouseleave", () => {
+    isCursorVisible = false;
+
+    trail.length = 0;
+
+    ctx.clearRect(0, 0, w, h);
+});
+
+window.addEventListener("blur", () => {
+    isCursorVisible = false;
+
+    trail.length = 0;
+
+    ctx.clearRect(0, 0, w, h);
+});
 
 function animate() {
     ctx.clearRect(0, 0, w, h);
+
+    if (
+        !isCursorVisible ||
+        isMobile ||
+        trail.length === 0
+    ) {
+        requestAnimationFrame(animate);
+        return;
+    }
 
     trail[0].x += (mouse.x - trail[0].x) * 0.35;
     trail[0].y += (mouse.y - trail[0].y) * 0.35;
@@ -365,9 +346,17 @@ function animate() {
     ctx.globalCompositeOperation = "lighter";
 
     trail.forEach((p, i) => {
-    const hue = 210 - i / (trail.length) * 90;
+        const hue = 210 - (i / trail.length) * 90;
+
         ctx.beginPath();
-        ctx.fillStyle = `hsla(${hue},100%,60%,${1 - i / trail.length})`;
+
+        ctx.fillStyle = `hsla(
+            ${hue},
+            100%,
+            60%,
+            ${1 - i / trail.length}
+        )`;
+
         ctx.arc(
             p.x,
             p.y,
@@ -375,6 +364,7 @@ function animate() {
             0,
             Math.PI * 2
         );
+
         ctx.fill();
     });
 
@@ -383,11 +373,9 @@ function animate() {
 
 animate();
 
-
+// LOGO EFFECT
 const logo = document.getElementById("logoText");
-
-const names = ["Vinay", '$ <span id="cursor">_</span>'];
-let index = 0;
+const names = ["Vinay", '$ <span id="terminalCursor">_</span>'];
 
 function switchLogo() {
     logo.classList.add("glitch");
@@ -401,6 +389,16 @@ function switchLogo() {
         logo.classList.remove("glitch");
     }, 300); // glitch duration
 }
+// Change every 3, 5 seconds
+let t = 3000; (function f(){ switchLogo(); setTimeout(f, t = t === 3000 ? 5000 : 3000); })();
 
-// Change every 3, 6 seconds
-let t = 3000; (function f(){ switchLogo(); setTimeout(f, t = t === 3000 ? 6000 : 3000); })();
+console.log(`
+██╗   ██╗██╗███╗   ██╗ █████╗ ██╗   ██╗
+██║   ██║██║████╗  ██║██╔══██╗╚██╗ ██╔╝
+██║   ██║██║██╔██╗ ██║███████║ ╚████╔╝
+╚██╗ ██╔╝██║██║╚██╗██║██╔══██║  ╚██╔╝
+ ╚████╔╝ ██║██║ ╚████║██║  ██║   ██║
+  ╚═══╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝   ╚═╝
+
+Portfolio Loaded Successfully
+`);
