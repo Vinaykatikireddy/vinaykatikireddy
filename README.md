@@ -21,7 +21,7 @@ environments. Strong interest in ethical hacking, system internals, and security
 
 **<h3 align="left">At a Glance:</h3>**
 
-- I'm currently working on: **💻 Face Recogmition Attendance System**
+- I'm currently working on: **💻 Face Recognition Attendance System**
 - I'm currently learning: **📚 NodeJS, Postgres, OOPS in python**
 - Ask me about: **💡 JavaScript,  SQL, Python, and RESTful APIs**
 - Fun fact: **I often learn more from errors than from documentation.**
