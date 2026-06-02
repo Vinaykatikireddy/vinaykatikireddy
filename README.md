@@ -12,14 +12,14 @@
   </ul>
 </div>
 
-**<h3 align="left">Connect with me:</h3>** 
+<h3 align="left"><strong>Connect with me:</strong></h3> 
 <p align="left"><a href="https://www.linkedin.com/in/vinaykatikireddy/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" height="28" style="margin-right: 4px"></a> <a href="https://github.com/vinaykatikireddy" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" height="28" style="margin-right: 4px"></a> <a href="mailto:vinaykatikireddy116@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" height="28" style="margin-right: 4px"></a></p>
 
  **<h3 align="left">Computer Science undergraduate focused on cybersecurity, AI Security and Linux-based development.
 Experienced in building scalable web applications, automating workflows, and working with low-level Linux
 environments. Strong interest in ethical hacking, system internals, and security research.</h3>**
 
-**<h3 align="left">At a Glance:</h3>**
+<h3 align="left"><strong>At a Glance:</strong></h3>
 
 - I'm currently working on: **💻 Face Recognition Attendance System**
 - I'm currently learning: **📚 NodeJS, Postgres, OOPS in python**
@@ -27,7 +27,7 @@ environments. Strong interest in ethical hacking, system internals, and security
 - Fun fact: **I often learn more from errors than from documentation.**
 - Portfolio: **<a href="https://vinaykatikireddy.github.io/vinaykatikireddy/" target="_blank">Vinay's Portfolio</a>**
 
- **<h3 align="left">Skills</h3>**
+ <h3 align="left"><strong>Skills</strong></h3>
 
 <div style="display: flex; flex-wrap: wrap; gap: 4px; justify-content: left;">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1C?logo=javascript&logoColor=white" height="28" alt="JavaScript" style="margin-right: 4px">
@@ -44,7 +44,7 @@ environments. Strong interest in ethical hacking, system internals, and security
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=white" height="20" alt="Linux" style="margin-right: 4px; border-radius: 5px">
 </div>
 
- **<h3 align="left">GitHub Stats</h3>**
+<h3 align="left"><strong>GitHub Stats</strong></h3>
 
 <p align="left">
   <img width="48%" src="https://streak-stats.demolab.com/?user=vinaykatikireddy&theme=react&hide_border=false&date_format=M+j%5B%2C+Y%5D&mode=daily&hide_total_contributions=false&hide_current_streak=false&hide_longest_streak=false&card_height=200" alt="GitHub streak Card" />
