@@ -23,7 +23,7 @@ environments. Strong interest in ethical hacking, system internals, and security
 - I'm currently learning: **📚 NodeJS, Postgres, OOPS in python**
 - Ask me about: **💡 JavaScript,  SQL, Python, and RESTful APIs**
 - Fun fact: **I often learn more from errors than from documentation.**
-- Portfolio: **<a href="https://vinaykatikireddy.github.io/" target="_blank">Vinay's Portfolio</a>**
+- Portfolio: **<a href="https://vinaykatikireddy.is-a.dev/" target="_blank">Vinay's Portfolio</a>**
 
  <h3 align="left"><strong>Skills</strong></h3>
 
