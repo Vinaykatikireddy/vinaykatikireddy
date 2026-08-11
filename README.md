@@ -12,7 +12,7 @@
   </ul>
 </div>
 
-<h3 align="left"  style="font-weight: bold;">Connect with me:</h3>
+<h3 align="left" style="font-weight: bold;">Connect with me:</h3>
 <p align="left">
   <a href="https://www.linkedin.com/in/vinaykatikireddy/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" height="28" style="margin-right: 4px">
@@ -22,11 +22,11 @@
   </a>
 </p>
 
- **<h3 align="left">Computer Science undergraduate focused on cybersecurity, AI Security and Linux-based development.
+<h3 align="left" style="font-weight: bold;">Computer Science undergraduate focused on cybersecurity, AI Security and Linux-based development.
 Experienced in building scalable web applications, automating workflows, and working with low-level Linux
-environments. Strong interest in ethical hacking, system internals, and security research.</h3>**
+environments. Strong interest in ethical hacking, system internals, and security research.</h3>
 
-**<h3 align="left">At a Glance:</h3>**
+<h3 align="left" style="font-weight: bold;">At a Glance:</h3>
 
 - I'm currently working on: **Getting an Internship**
 - I'm currently learning: **📚 NodeJS, Postgres, OOPS in python**
@@ -34,7 +34,7 @@ environments. Strong interest in ethical hacking, system internals, and security
 - Fun fact: **I often learn more from errors than from documentation.**
 - Portfolio: **<a href="https://vinaykatikireddy.is-a.dev" target="_blank">Vinay's Portfolio</a>**
 
- **<h3 align="left">Skills</h3>**
+<h3 align="left" style="font-weight: bold;">Skills</h3>
 
 <div style="display: flex; flex-wrap: wrap; gap: 4px; justify-content: left;">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1C?logo=javascript&logoColor=white" height="28" alt="JavaScript" style="margin-right: 4px">
