@@ -12,7 +12,7 @@
   </ul>
 </div>
 
-<h3 align="left">**Connect with me:** </h3>
+<h3 align="left"  style="font-weight: bold;">Connect with me:</h3>
 <p align="left">
   <a href="https://www.linkedin.com/in/vinaykatikireddy/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" height="28" style="margin-right: 4px">
