@@ -50,3 +50,10 @@ environments. Strong interest in ethical hacking, system internals, and security
   <img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white" height="28" alt="Git" style="margin-right: 4px">
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=white" height="20" alt="Linux" style="margin-right: 4px; border-radius: 5px">
 </div>
+
+### LeetCode Stats
+<p align="center">
+  <a href="https://leetcode.com/u/vinaykatikireddy/">
+    <img src="https://leetcard.jacoblin.cool/vinaykatikireddy?theme=dark&ext=heatmap" alt="LeetCode Profile" width="70%"/>
+  </a>
+</p>
