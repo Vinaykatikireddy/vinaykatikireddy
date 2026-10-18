@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "https://vinaykatikireddy-portfolio.hf.space/$1",
+      "permanent": true
+    }
+  ]
+}
